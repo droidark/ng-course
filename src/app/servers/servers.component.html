@@ -1,2 +1,39 @@
+<!-- 2.24 Property binding
+  [property] Indicates to Angular that this property gonna be managed by
+  (component).ts script
+
+  2.25 Property binding vs String interpolation
+  We should use STRING INTERPOLATION if we want output something in our template
+  We should use PROPERTY BINDING if we want change HTML properties
+  PROPERTY BINDING works with normal HTML expression. DO NOT USE "{{}}"
+
+  2.26 Event Binding
+  (HtmlEvent) = "methodName()"
+
+  2.28 Passing and using data with event bilding
+  When you send $event you're sending the event with all data about this event.
+-->
+
+<!--
+2.28 Passing and using data with event bilding
+<label>Server name</label>
+<input type="text" class="form-control" (input) = "onUpdateServerName($event)" >
+<p>{{ serverName }}</p> -->
+
+<!--
+  2.29 Two ways databilding
+  ngModel: Directive, use @angular/forms (added by default :P). It's the simple
+  way to bilding data in two directions
+
+-->
+
+<label>Server name</label>
+<input type="text" class="form-control" [(ngModel)] = "serverName" >
+<p>{{ serverName }}</p>
+
+<button type="button" class="btn btn-primary"
+  [disabled] = "!allowNewServer"
+  (click) = "onCreateServer()" >Add Server</button>
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
