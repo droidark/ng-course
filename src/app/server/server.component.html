@@ -1,8 +1,13 @@
 <!-- 2.23 String interpolation
   {{ variable in .ts component }}
   {{ [Only accepts string] }}
+
+  2.36 Applying CSS classes dinamically with ngClass
+  [ngClass]: Directive to change css class depending condition
 -->
-<!-- -->
-<p [ngStyle] = "{backgroundColor: getColor()}">
+<p
+  [ngStyle] = "{backgroundColor: getColor()}"
+  [ngClass] = "{online: serverStatus === 'online'}"
+>
   {{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
 </p>

@@ -45,5 +45,7 @@
   They olny change the element were they placed on
 -->
 <p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
-<app-server></app-server>
-<app-server></app-server>
+<!--
+  Applicate comment since 2.37 Outputting list with *ngFor
+<app-server></app-server> -->
+<app-server *ngFor = "let server of servers"></app-server>
