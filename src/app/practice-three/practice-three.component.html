@@ -1,0 +1,11 @@
+<!--
+  [ngStyle] can support if
+
+-->
+<button type="button" class="btn btn-primary" (click)="toggleMessage()">Display Details</button>
+<p [ngClass] = "{hide: display}">{{message}}</p>
+<p *ngFor = "let itemLog of logs"
+  [ngStyle] = "{backgroundColor: itemLog > 5 ? 'blue' : 'none'}"
+  [ngClass] = "{whitetxt: itemLog > 5}">
+  Click number: {{itemLog}}
+</p>
