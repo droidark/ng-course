@@ -1,10 +1,13 @@
 <!--
   [ngStyle] can support if
 
+  2.28: Getting the Index when using ngFor
+  You can get the *ngFor index with following the next step:
+  let item for itemArray; let indexName = index
 -->
 <button type="button" class="btn btn-primary" (click)="toggleMessage()">Display Details</button>
 <p [ngClass] = "{hide: display}">{{message}}</p>
-<p *ngFor = "let itemLog of logs"
+<p *ngFor = "let itemLog of logs; let i = index"
   [ngStyle] = "{backgroundColor: itemLog > 5 ? 'blue' : 'none'}"
   [ngClass] = "{whitetxt: itemLog > 5}">
   Click number: {{itemLog}}
