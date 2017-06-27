@@ -1,0 +1,30 @@
+***********************************     ANGULAR 2 INPUT     ***********************************
+
++---------------+	● OuterComponent (.html)
+|OUTER COMPONENT|		▫ <app-outer-component>
++---------------+		   <app-inner-component [[outerPropertyName]]="[innerPropertyName]">
+	   |				  		   </app-inner-component>
+	   |				        </app-outer-component>
+	   |
+	@Input()		    ● InnerComponent (.ts)
+	   |				     ▫ Add Input import from @angular/core.
+	  `.´				     ▫ Add @Input() [propertyName]: [propertyDescription].
++---------------+	 ▫ With @Input, a component obtain the capacity to use
+|INNER COMPONENT|	  a property of other component.
++---------------+
+
+***********************************     ANGULAR 2 OUTPUT     ***********************************
+
++---------------+	  ● OuterComponent (.ts)
+|OUTER COMPONENT|		 ▫ Catch the INNER COMPONENT event with the same type parameter.
++---------------+	  ● OuterComponent (.html)
+	   .				       ▫ </app-inner-component
+	  ´ `					       (innerComponent-event-name)="catch-outerComponent-method-name($event)")>
+	   |
+	   |			        ● InnerComponent (.ts)
+	   |				       ▫ Import "Output" and "EventEmitter" from @angular/core.
+    @Output()			   ▫ Create a property with the following syntax.
+	   |					      @Output(['optional-alias']) propertyEventName = new EventEmitter<[type-property]>();
++---------------+		 ▫ Inside any method, launch the event with the following syntax
+|INNER COMPONENT|		   this.propertyEventName.emit([data-to-share]);
++---------------+
